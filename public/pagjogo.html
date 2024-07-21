@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/jogostyle.css">
+    <title>AlquimIF - Jogo</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="index.html"><img src="imgs/AlquimIF - logo.png" alt="AlquimIF logo"></a>
+        </div>
+        <nav class="barranav">
+            <ul class="itensnav">
+                <li><a href="index.html">Voltar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="conteudo">
+        <div id="game-container">
+            <h1 id="pergunta"></h1>
+            <div id="opcoes">
+                <button class="opcao" data-resposta="a" id="opcao-a"></button>
+                <button class="opcao" data-resposta="b" id="opcao-b"></button>
+                <button class="opcao" data-resposta="c" id="opcao-c"></button>
+                <button class="opcao" data-resposta="d" id="opcao-d"></button>
+            </div>
+            <div id="contador-container">
+                <p>Tempo restante: <span id="contador"></span> segundos</p>
+            </div>
+            <div id="pontos-container">
+                <p>Pontos: <span id="pontos">0</span></p>
+            </div>
+            <div id="feedback" class="feedback"></div>
+        </div>
+    </main>
+    <footer class="rodape">
+        @TechTyrants™ - 2024 - Todos os Direitos Reservados.
+    </footer>
+
+    <!-- Pop-up de resultados -->
+    <div id="result-popup" class="result-popup hidden">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Resultados</h2>
+            <p id="resultado-acertos-popup">Acertos: </p>
+            <p id="resultado-erros-popup">Erros: </p>
+            <p id="resultado-pontos-popup">Pontos: </p>
+            <img id="profilePicPopup" src="" alt="Foto do Perfil" class="profile-pic-popup">
+            <p id="nicknamePopup"></p>
+            <div id="popupAudioPlayer" class="customAudioPlayer">
+                <button id="popupPlayPauseButton">Reproduzir</button>
+                <span id="popupCurrentTimeDisplay">00:00</span> / <span id="popupDurationDisplay">00:30</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/scriptjogo.js"></script>
+    <script>
+        const tema = new URLSearchParams(window.location.search).get('temaPerguntas');
+        switch (tema) {
+            case "Química Geral":
+                document.write('<script src="JS/scriptquimgeral.js"><\/script>');
+                break;
+            case "Equilíbrio Químico":
+                document.write('<script src="JS/scriptequilibquim.js"><\/script>');
+                break;
+            case "Cinética Química":
+                document.write('<script src="JS/scriptcinetquim.js"><\/script>');
+                break;
+            default:
+                alert("Tema não reconhecido!");
+        }
+    </script>
+</body>
+</html>

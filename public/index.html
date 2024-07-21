@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>AlquimIF - Seu Jogo de Química</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="index.html"><img src="imgs/AlquimIF - logo.png" alt="AlquimIF logo"></a>
+        </div>
+        <nav class="barranav">
+            <ul class="itensnav">
+                <li><a href="#" id="jogar-btn">Jogar</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="seuperfil.html">Seu Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="conteudo">
+        <h1>Bem-vindo ao AlquimIF</h1>
+        <div class="info-container">
+            <div class="info-box full-width">
+                <h3>Sobre o Jogo AlquimIF</h3>
+                <p>O AlquimIF é um jogo interativo de perguntas e respostas focado em Química, onde você pode testar e expandir seus conhecimentos em diferentes áreas da química através de desafios teóricos e práticos.</p>
+            </div>
+            <div class="info-box">
+                <h3>Personalização da Sala</h3>
+                <p>Você pode personalizar vários aspectos da sua sala de jogo, incluindo:</p>
+                <ul>
+                    <li><b>Nome da Sala:</b> Defina um nome exclusivo para sua sala.</li>
+                    <li><b>Número de Perguntas:</b> Escolha quantas perguntas serão feitas na sua sala (máximo de 21).</li>
+                    <li><b>Tema das Perguntas:</b> Selecione entre temas variados como Química Geral, Cinética Química e Equilíbrio Químico.</li>
+                    <li><b>Tipo de Perguntas:</b> Escolha entre perguntas teóricas, práticas ou uma mistura de ambas.</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h3>Pontuação e Regras</h3>
+                <p>
+                    <b>Tempo e Pontuação:</b> Responder corretamente em menos tempo garante mais pontos. Respostas corretas consecutivas aumentam seu bônus de pontos.<br>
+                    <b>Pontuação de Queda para Práticas:</b> Como as perguntas práticas exigem mais tempo para cálculos, você pode definir um ponto de queda de pontuação. Por exemplo, se o tempo total para uma pergunta prática é de 45 segundos, você pode definir que a pontuação começará a diminuir a partir de 20 segundos.<br>
+                    <b>Erros:</b> Errar uma pergunta não reduz seus pontos, mas interrompe sua sequência de respostas corretas e, consequentemente, seu bônus de pontos.
+                </p>
+            </div>
+            <div class="info-box">
+                <h3>Criação de Perfil</h3>
+                <p>Crie seu perfil para personalizar suas preferências e acompanhar seu progresso no jogo.</p>
+            </div>
+            <div class="info-box">
+                <h3>Opções de Criação de Sala</h3>
+                <p>Explore diversas opções de criação de sala que auxiliam em perguntas práticas.</p>
+            </div>
+            <div class="info-box">
+                <h3>Conheça os Desenvolvedores</h3>
+                <p>Descubra mais sobre os desenvolvedores do AlquimIF e siga-os nas redes sociais.</p>
+            </div>
+        </div>
+    </main>
+    <footer class="rodape">
+        @TechTyrants™ - 2024 - Todos os Direitos Reservados.
+    </footer>
+
+    <div class="carousel-container">
+        <section class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <div>
+                        <h3>Crie seu perfil!</h3>
+                        <p>Faça seu perfil agora mesmo e personalize suas preferências.</p>
+                        <a href="seuperfil.html">Clique aqui</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div>
+                        <h3>Opções de Criação de Sala</h3>
+                        <p>Explore as opções que ajudam nas perguntas práticas.</p>
+                        <a href="#" id="jogar-btn">Veja mais</a> <!-- Atualize o link conforme necessário -->
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div>
+                        <h3>Conheça os Devs</h3>
+                        <p>Veja os desenvolvedores do site e siga-os no Instagram! (quase todos)</p>
+                        <a href="equipe.html">Confira aqui</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <button class="active" data-slide="0"></button>
+                <button data-slide="1"></button>
+                <button data-slide="2"></button>
+            </div>
+        </section>
+    </div>
+
+    <div id="popup-sala" class="popup-sala">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Escolha uma Opção</h2>
+            <div class="opcoes-jogo">
+                <button id="opcao-criar-sala">Criar Sala</button>
+                <button id="opcao-entrar-sala">Entrar em Sala</button>
+                <button id="opcao-jogar-sozinho">Jogar Sozinho</button>
+            </div>
+            <form id="form-jogar-sozinho" class="formulario" style="display: none;">
+                <h3>Jogar Offline</h3>
+                <label for="num-perguntas-sozinho">Número de Perguntas: (Máx 21)</label>
+                <input type="number" id="num-perguntas-sozinho" name="num-perguntas-sozinho" min="1" max="21" required>
+                <label for="tipo-perguntas-sozinho">Tipo de Perguntas:</label>
+                <select id="tipo-perguntas-sozinho" name="tipo-perguntas-sozinho" required>
+                    <option value="">Escolha o Tipo</option>
+                    <option value="teoricas">Teóricas</option>
+                    <option value="praticas">Práticas</option>
+                    <option value="mistas">Mistas</option>
+                </select>
+                <label for="tema-perguntas-sozinho">Tema das Perguntas:</label>
+                <select id="tema-perguntas-sozinho" name="tema-perguntas-sozinho" required>
+                    <option value="">Escolha um Tema</option>
+                    <option value="Química Geral">Química Geral</option>
+                    <option value="Cinética Química">Cinética Química</option>
+                    <option value="Equilíbrio Químico">Equilíbrio Químico</option>
+                </select>
+                <div class="perguntas-teoricas-sozinho">
+                    <label for="tempo-teoricas-sozinho">Tempo para Perguntas Teóricas (segundos):</label>
+                    <input type="number" id="tempo-teoricas-sozinho" name="tempo-teoricas-sozinho" min="10" max="120">
+                </div>
+                <div class="perguntas-praticas-sozinho">
+                    <label for="tempo-praticas-sozinho">Tempo para Perguntas Práticas (segundos):</label>
+                    <input type="number" id="tempo-praticas-sozinho" name="tempo-praticas-sozinho" min="10" max="120">
+                    <label for="queda-pontos-praticas-sozinho">Ponto de Queda de Pontuação para Práticas (segundos):</label>
+                    <input type="number" id="queda-pontos-praticas-sozinho" name="queda-pontos-praticas-sozinho" min="10" max="30">
+                </div>
+                <button type="submit">Começar Jogo</button>
+            </form>
+            <form id="form-entrar-sala" class="formulario" style="display: none;">
+                <h3>Salas Públicas Disponíveis</h3>
+                <ul id="lista-salas-publicas"></ul>
+                <h3>Entrar em Sala Privada</h3>
+                <label for="nome-sala-privada">Nome da Sala:</label>
+                <input type="text" id="nome-sala-privada" name="nome-sala-privada" required>
+                <label for="senha-sala-privada">Senha:</label>
+                <input type="password" id="senha-sala-privada" name="senha-sala-privada" required>
+                <button type="submit">Entrar na Sala</button>
+            </form>
+            <form id="form-criar-sala" class="formulario scrollable-form" style="display: none;">
+                <h3>Criar Sala</h3>
+                <label for="nome-sala">Nome da Sala:</label>
+                <input type="text" id="nome-sala" name="nome-sala" required>
+                <label for="publico-privado">Sala Pública ou Privada:</label>
+                <select id="publico-privado" name="publico-privado" required>
+                    <option value="publica">Pública</option>
+                    <option value="privada">Privada</option>
+                </select>
+                <div id="senha-container" style="display: none;">
+                    <label for="senha-sala">Senha:</label>
+                    <input type="password" id="senha-sala" name="senha-sala">
+                </div>
+                <label for="num-perguntas">Número de Perguntas: (máx. 21)</label>
+                <input type="number" id="num-perguntas" name="num-perguntas" min="1" max="21" required>
+                <label for="num-participantes">Número de Participantes: (máx. 8)</label>
+                <input type="number" id="num-participantes" name="num-participantes" min="1" max="8" required>
+                <label for="tipo-perguntas">Tipo de Perguntas:</label>
+                <select id="tipo-perguntas" name="tipo-perguntas" required>
+                    <option value="">Escolha o Tipo</option>
+                    <option value="teoricas">Teóricas</option>
+                    <option value="praticas">Práticas</option>
+                    <option value="mistas">Mistas</option>
+                </select>
+                <label for="tema-perguntas">Tema das Perguntas:</label>
+                <select id="tema-perguntas" name="tema-perguntas" required>
+                    <option value="">Escolha um Tema</option>
+                    <option value="Química Geral">Química Geral</option>
+                    <option value="Cinética Química">Cinética Química</option>
+                    <option value="Equilíbrio Químico">Equilíbrio Químico</option>
+                </select>
+                <div class="perguntas-teoricas">
+                    <label for="tempo-teoricas">Tempo para Perguntas Teóricas (segundos):</label>
+                    <input type="number" id="tempo-teoricas" name="tempo-teoricas" min="10" max="120" required>
+                </div>
+                <div class="perguntas-praticas">
+                    <label for="tempo-praticas">Tempo para Perguntas Práticas (segundos):</label>
+                    <input type="number" id="tempo-praticas" name="tempo-praticas" min="10" max="120" required>
+                    <label for="queda-pontos-praticas">Ponto de Queda de Pontuação para Práticas (segundos):</label>
+                    <input type="number" id="queda-pontos-praticas" name="queda-pontos-praticas" min="10" max="30" required>
+                </div>
+                <button type="submit">Criar Sala</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="JS/scriptcarrossel.js" defer></script>
+    <script src="JS/scriptpopupsala.js" defer></script>
+    <script src="https://cdn.socket.io/4.4.0/socket.io.min.js"></script>
+</body>
+</html>

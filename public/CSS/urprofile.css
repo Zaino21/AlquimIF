@@ -1,0 +1,300 @@
+/* Estilos principais para o formulário de perfil */
+#profileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #3700B3;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#profileForm label {
+    font-weight: bold;
+    color: #fff;
+}
+
+#profileForm input[type="text"],
+#profileForm input[type="file"],
+#profileForm select {
+    padding: 8px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background-color: #FFF;
+}
+
+.profile-pic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-pic-container label {
+    cursor: pointer;
+}
+
+#profilePic {
+    display: none;
+}
+
+#previewProfilePic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #FFF;
+    cursor: pointer;
+}
+
+#chooseGlassBtn {
+    padding: 10px;
+    background-color: #b300ff;
+    color: #FFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#chooseGlassBtn:hover {
+    background-color: #3700B3;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#musicSlider {
+    flex-grow: 1;
+}
+
+#profileForm button {
+    padding: 10px;
+    background-color: #b300ff;
+    color: #FFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#profileForm button:hover {
+    background-color: #3700B3;
+}
+
+.profile-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.profile-preview {
+    max-width: 500px;
+    padding: 20px;
+    background-color: #3700B3;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-pic-card {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #FFF;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#previewMusic {
+    display: block;
+    margin: 0 auto;
+}
+
+#musicSlider::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #ccc 0%, #ccc 0%, #8e44ad 0%, #8e44ad 0%);
+    height: 8px;
+    border-radius: 4px;
+}
+
+#musicSlider::-moz-range-track {
+    background: linear-gradient(to right, #ccc 0%, #ccc 0%, #8e44ad 0%, #8e44ad 0%);
+    height: 8px;
+    border-radius: 4px;
+}
+
+#musicSlider::-webkit-slider-thumb {
+    width: 12px;
+    height: 12px;
+    background: #8e44ad;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#musicSlider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #8e44ad;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Modal para imagem ampliada */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #FFF;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para o player de áudio personalizado */
+#customAudioPlayer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #F0E6FF;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+#customAudioPlayer button {
+    background-color: #3700B3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#customAudioPlayer button:hover {
+    background-color: #8e44ad;
+    transition: background-color 0.3s;
+}
+
+#customAudioPlayer span {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: #333;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* CSS para customSlider e thumb */
+#customSlider {
+    width: 100%;
+    height: 8px;
+    background: #ccc;
+    position: relative;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#thumb {
+    width: 16px;
+    height: 16px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: -4px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+/* Estilos para o popup de vidraças */
+.glass-popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.glass-popup .popup-content {
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    max-width: 600px;
+    text-align: center;
+}
+
+.glass-popup .close-glass-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.glass-popup .close-glass-btn:hover,
+.glass-popup .close-glass-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.glass-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.glass-option {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border: 2px solid #000;
+    border-radius: 50%;
+    object-fit: cover;
+}

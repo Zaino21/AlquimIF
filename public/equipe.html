@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/devstyles.css">
+    <title>AlquimIF - Seu Jogo de Química</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="index.html"><img src="imgs/AlquimIF - logo.png" alt="AlquimIF logo"></a>
+        </div>
+        <nav class="barranav">
+            <ul class="itensnav">
+                <li><a href="#" id="jogar-btn">Jogar</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="seuperfil.html">Seu Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="conteudo">
+        <h1>Devs</h1>
+
+        <!-- Contêiner de duplas -->
+        <div class="dupla">
+            <div class="membro">
+                <div class="foto-membro">
+                    <img src="imgs/zaino.png" alt="Foto do Zaino">
+                </div>
+                <span class="nome-membro">Zaino</span>
+                <a href="https://www.instagram.com/zaiknown.py/" target="_blank" class="icon-instagram"><img src="imgs/logotipo-do-instagram.png" alt="Instagram"></a>
+                <p class="frase-membro">"Eu domino a velha luta por sobrevivência."</p>
+                <div class="custom-audio-player" data-audio-src="music/Oldies Station.mp3">
+                    <button class="play-pause">Reproduzir</button>
+                    <span class="time-display">00:00 / --:--</span>
+                </div>
+            </div>
+
+            <div class="membro">
+                <div class="foto-membro">
+                    <img src="imgs/neoleo.png" alt="Foto do Leonel">
+                </div>
+                <span class="nome-membro">Leonel</span>
+                <a href="index.html" target="_blank" class="icon-instagram"><img src="imgs/logotipo-do-instagram.png" alt="Instagram"></a>
+                <p class="frase-membro">"O oceano abriu/lavou o seu túmulo."</p>
+                <div class="custom-audio-player" data-audio-src="music/Car Seat Headrest - _Beach Life-In-Death_ (Official Audio).mp3">
+                    <button class="play-pause">Reproduzir</button>
+                    <span class="time-display">00:00 / --:--</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dupla">
+            <div class="membro">
+                <div class="foto-membro">
+                    <img src="imgs/galalau.png" alt="Foto do Galalau">
+                </div>
+                <span class="nome-membro">Galalau</span>
+                <a href="https://www.instagram.com/rafaelb.12/" target="_blank" class="icon-instagram"><img src="imgs/logotipo-do-instagram.png" alt="Instagram"></a>
+                <p class="frase-membro">"O que devemos fazer para restaurar nossa inocência e toda a promessa que adorávamos?"</p>
+                <div class="custom-audio-player" data-audio-src="music/Paramore - We Are Broken (Official Audio).mp3">
+                    <button class="play-pause">Reproduzir</button>
+                    <span class="time-display">00:00 / --:--</span>
+                </div>
+            </div>
+
+            <div class="membro">
+                <div class="foto-membro">
+                    <img src="imgs/victor.png" alt="Foto do Victor">
+                </div>
+                <span class="nome-membro">Victor</span>
+                <a href="https://www.instagram.com/victinho.py/" target="_blank" class="icon-instagram"><img src="imgs/logotipo-do-instagram.png" alt="Instagram"></a>
+                <p class="frase-membro">"Perdão pelo atraso, estou navegando, navegando pela minha mente."</p>
+                <div class="custom-audio-player" data-audio-src="music/Navigating.mp3">
+                    <button class="play-pause">Reproduzir</button>
+                    <span class="time-display">00:00 / --:--</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dupla">
+            <div class="membro">
+                <div class="foto-membro">
+                    <img src="imgs/petico.png" alt="Foto do Petico">
+                </div>
+                <span class="nome-membro">Petico</span>
+                <a href="https://www.instagram.com/pedro_ry68/" target="_blank" class="icon-instagram"><img src="imgs/logotipo-do-instagram.png" alt="Instagram"></a>
+                <p class="frase-membro">"Eu não ouço essas vozes chamando, eu devo tê-las chutado para fora."</p>
+                <div class="custom-audio-player" data-audio-src="music/twenty one pilots_ Ode To Sleep.mp3">
+                    <button class="play-pause">Reproduzir</button>
+                    <span class="time-display">00:00 / --:--</span>
+                </div>
+            </div>
+
+            <div class="membro">
+                <span class="colaborador">Colaborador Especial</span>
+                <div class="foto-membro">
+                    <img src="imgs/lucas.png" alt="Foto do Lucas">
+                </div>
+                <span class="nome-membro">Lucas</span>
+                <a href="https://www.instagram.com/lucasmartins1560/" target="_blank" class="icon-instagram"><img src="imgs/logotipo-do-instagram.png" alt="Instagram"></a>
+                <p class="frase-membro">"Às vezes a vida é uma bagunça."</p>
+                <div class="custom-audio-player" data-audio-src="music/Life's A Mess.mp3">
+                    <button class="play-pause">Reproduzir</button>
+                    <span class="time-display">00:00 / --:--</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="popup-sala" class="popup-sala">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Escolha uma Opção</h2>
+            <div class="opcoes-jogo">
+                <button id="opcao-criar-sala">Criar Sala</button>
+                <button id="opcao-entrar-sala">Entrar em Sala</button>
+                <button id="opcao-jogar-sozinho">Jogar Sozinho</button>
+            </div>
+            <form id="form-jogar-sozinho" class="formulario" style="display: none;">
+                <h3>Jogar Offline</h3>
+                <label for="num-perguntas-sozinho">Número de Perguntas: (Máx 21)</label>
+                <input type="number" id="num-perguntas-sozinho" name="num-perguntas-sozinho" min="1" max="21" required>
+                <label for="tipo-perguntas-sozinho">Tipo de Perguntas:</label>
+                <select id="tipo-perguntas-sozinho" name="tipo-perguntas-sozinho" required>
+                    <option value="">Escolha o Tipo</option>
+                    <option value="teoricas">Teóricas</option>
+                    <option value="praticas">Práticas</option>
+                    <option value="mistas">Mistas</option>
+                </select>
+                <label for="tema-perguntas-sozinho">Tema das Perguntas:</label>
+                <select id="tema-perguntas-sozinho" name="tema-perguntas-sozinho" required>
+                    <option value="">Escolha um Tema</option>
+                    <option value="Química Geral">Química Geral</option>
+                    <option value="Cinética Química">Cinética Química</option>
+                    <option value="Equilíbrio Químico">Equilíbrio Químico</option>
+                </select>
+                <div class="perguntas-teoricas-sozinho">
+                    <label for="tempo-teoricas-sozinho">Tempo para Perguntas Teóricas (segundos):</label>
+                    <input type="number" id="tempo-teoricas-sozinho" name="tempo-teoricas-sozinho" min="10" max="120">
+                </div>
+                <div class="perguntas-praticas-sozinho">
+                    <label for="tempo-praticas-sozinho">Tempo para Perguntas Práticas (segundos):</label>
+                    <input type="number" id="tempo-praticas-sozinho" name="tempo-praticas-sozinho" min="10" max="120">
+                    <label for="queda-pontos-praticas-sozinho">Ponto de Queda de Pontuação para Práticas (segundos):</label>
+                    <input type="number" id="queda-pontos-praticas-sozinho" name="queda-pontos-praticas-sozinho" min="10" max="30">
+                </div>
+                <button type="submit">Começar Jogo</button>
+            </form>
+            <form id="form-entrar-sala" class="formulario" style="display: none;">
+                <h3>Salas Públicas Disponíveis</h3>
+                <ul id="lista-salas-publicas"></ul>
+                <h3>Entrar em Sala Privada</h3>
+                <label for="nome-sala-privada">Nome da Sala:</label>
+                <input type="text" id="nome-sala-privada" name="nome-sala-privada" required>
+                <label for="senha-sala-privada">Senha:</label>
+                <input type="password" id="senha-sala-privada" name="senha-sala-privada" required>
+                <button type="submit">Entrar na Sala</button>
+            </form>
+            <form id="form-criar-sala" class="formulario scrollable-form" style="display: none;">
+                <h3>Criar Sala</h3>
+                <label for="nome-sala">Nome da Sala:</label>
+                <input type="text" id="nome-sala" name="nome-sala" required>
+                <label for="publico-privado">Sala Pública ou Privada:</label>
+                <select id="publico-privado" name="publico-privado" required>
+                    <option value="publica">Pública</option>
+                    <option value="privada">Privada</option>
+                </select>
+                <div id="senha-container" style="display: none;">
+                    <label for="senha-sala">Senha:</label>
+                    <input type="password" id="senha-sala" name="senha-sala">
+                </div>
+                <label for="num-perguntas">Número de Perguntas: (máx. 21)</label>
+                <input type="number" id="num-perguntas" name="num-perguntas" min="1" max="21" required>
+                <label for="num-participantes">Número de Participantes: (máx. 8)</label>
+                <input type="number" id="num-participantes" name="num-participantes" min="1" max="8" required>
+                <label for="tipo-perguntas">Tipo de Perguntas:</label>
+                <select id="tipo-perguntas" name="tipo-perguntas" required>
+                    <option value="">Escolha o Tipo</option>
+                    <option value="teoricas">Teóricas</option>
+                    <option value="praticas">Práticas</option>
+                    <option value="mistas">Mistas</option>
+                </select>
+                <label for="tema-perguntas">Tema das Perguntas:</label>
+                <select id="tema-perguntas" name="tema-perguntas" required>
+                    <option value="">Escolha um Tema</option>
+                    <option value="Química Geral">Química Geral</option>
+                    <option value="Cinética Química">Cinética Química</option>
+                    <option value="Equilíbrio Químico">Equilíbrio Químico</option>
+                </select>
+                <div class="perguntas-teoricas">
+                    <label for="tempo-teoricas">Tempo para Perguntas Teóricas (segundos):</label>
+                    <input type="number" id="tempo-teoricas" name="tempo-teoricas" min="10" max="120" required>
+                </div>
+                <div class="perguntas-praticas">
+                    <label for="tempo-praticas">Tempo para Perguntas Práticas (segundos):</label>
+                    <input type="number" id="tempo-praticas" name="tempo-praticas" min="10" max="120" required>
+                    <label for="queda-pontos-praticas">Ponto de Queda de Pontuação para Práticas (segundos):</label>
+                    <input type="number" id="queda-pontos-praticas" name="queda-pontos-praticas" min="10" max="30" required>
+                </div>
+                <button type="submit">Criar Sala</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <footer class="rodape">
+        @TechTyrants™ - 2024 - Todos os Direitos Reservados.
+    </footer>
+    <script src="JS/scriptaudio.js" defer></script>
+    <script src="JS/scriptfoto.js" defer></script>
+    <script src="JS/scriptpopupsala.js" defer></script>
+</body>
+</html>

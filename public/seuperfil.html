@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/urprofile.css">
+    <title>AlquimIF - Seu Jogo de Química</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="index.html"><img src="imgs/AlquimIF - logo.png" alt="AlquimIF logo"></a>
+        </div>
+        <nav class="barranav">
+            <ul class="itensnav">
+                <li><a href="#" id="jogar-btn">Jogar</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="seuperfil.html">Seu Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="conteudo">
+        <h1>Seu Perfil</h1>
+        <div class="profile-container">
+            <form id="profileForm">
+                <div class="profile-pic-container">
+                    <label for="profilePic">
+                        <img id="previewProfilePic" src="vidraçasperfil/vidraça1.gif" alt="Clique para escolher a vidraça animada">
+                    </label>
+                    <button type="button" id="chooseGlassBtn">Escolha sua vidraça</button>
+                </div>
+                
+                <label for="nickname">Nickname:</label>
+                <input type="text" id="nickname" name="nickname" required>
+
+                <label for="musicSelect">Escolha sua música para o pódio:</label>
+                <select id="musicSelect" name="musicSelect" required>
+                    <option value="">Selecione uma música</option>
+                </select>
+
+                <label for="musicStart">Trecho de 30 segundos:</label>
+                <input type="range" id="musicSlider" min="0" value="0" step="1">
+                <div>
+                    <span id="sliderStartTime">00:00</span> - <span id="sliderEndTime">00:30</span>
+                </div>
+
+                <button type="submit">Salvar Perfil</button>
+            </form>
+            <div id="profilePreview" class="profile-preview">
+                <h2>Prévia do Perfil</h2>
+                <img id="profilePicCard" src="vidraçasperfil/vidraça1.gif" alt="Vidraça de perfil" class="profile-pic-card">
+                <p id="previewNickname"></p>
+                <!-- Player de áudio personalizado -->
+                <div id="customAudioPlayer">
+                    <button id="playPauseButton">Reproduzir</button>
+                    <span id="currentTimeDisplay">00:00</span> / <span id="durationDisplay">00:30</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="popup-sala" class="popup-sala">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Escolha uma Opção</h2>
+            <div class="opcoes-jogo">
+                <button id="opcao-criar-sala">Criar Sala</button>
+                <button id="opcao-entrar-sala">Entrar em Sala</button>
+                <button id="opcao-jogar-sozinho">Jogar Sozinho</button>
+            </div>
+            <form id="form-jogar-sozinho" class="formulario" style="display: none;">
+                <h3>Jogar Offline</h3>
+                <label for="num-perguntas-sozinho">Número de Perguntas: (Máx 21)</label>
+                <input type="number" id="num-perguntas-sozinho" name="num-perguntas-sozinho" min="1" max="21" required>
+                <label for="tipo-perguntas-sozinho">Tipo de Perguntas:</label>
+                <select id="tipo-perguntas-sozinho" name="tipo-perguntas-sozinho" required>
+                    <option value="">Escolha o Tipo</option>
+                    <option value="teoricas">Teóricas</option>
+                    <option value="praticas">Práticas</option>
+                    <option value="mistas">Mistas</option>
+                </select>
+                <label for="tema-perguntas-sozinho">Tema das Perguntas:</label>
+                <select id="tema-perguntas-sozinho" name="tema-perguntas-sozinho" required>
+                    <option value="">Escolha um Tema</option>
+                    <option value="Química Geral">Química Geral</option>
+                    <option value="Cinética Química">Cinética Química</option>
+                    <option value="Equilíbrio Químico">Equilíbrio Químico</option>
+                </select>
+                <div class="perguntas-teoricas-sozinho">
+                    <label for="tempo-teoricas-sozinho">Tempo para Perguntas Teóricas (segundos):</label>
+                    <input type="number" id="tempo-teoricas-sozinho" name="tempo-teoricas-sozinho" min="10" max="120">
+                </div>
+                <div class="perguntas-praticas-sozinho">
+                    <label for="tempo-praticas-sozinho">Tempo para Perguntas Práticas (segundos):</label>
+                    <input type="number" id="tempo-praticas-sozinho" name="tempo-praticas-sozinho" min="10" max="120">
+                    <label for="queda-pontos-praticas-sozinho">Ponto de Queda de Pontuação para Práticas (segundos):</label>
+                    <input type="number" id="queda-pontos-praticas-sozinho" name="queda-pontos-praticas-sozinho" min="10" max="30">
+                </div>
+                <button type="submit">Começar Jogo</button>
+            </form>
+            <form id="form-entrar-sala" class="formulario" style="display: none;">
+                <h3>Salas Públicas Disponíveis</h3>
+                <ul id="lista-salas-publicas"></ul>
+                <h3>Entrar em Sala Privada</h3>
+                <label for="nome-sala-privada">Nome da Sala:</label>
+                <input type="text" id="nome-sala-privada" name="nome-sala-privada" required>
+                <label for="senha-sala-privada">Senha:</label>
+                <input type="password" id="senha-sala-privada" name="senha-sala-privada" required>
+                <button type="submit">Entrar na Sala</button>
+            </form>
+            <form id="form-criar-sala" class="formulario scrollable-form" style="display: none;">
+                <h3>Criar Sala</h3>
+                <label for="nome-sala">Nome da Sala:</label>
+                <input type="text" id="nome-sala" name="nome-sala" required>
+                <label for="publico-privado">Sala Pública ou Privada:</label>
+                <select id="publico-privado" name="publico-privado" required>
+                    <option value="publica">Pública</option>
+                    <option value="privada">Privada</option>
+                </select>
+                <div id="senha-container" style="display: none;">
+                    <label for="senha-sala">Senha:</label>
+                    <input type="password" id="senha-sala" name="senha-sala">
+                </div>
+                <label for="num-perguntas">Número de Perguntas: (máx. 21)</label>
+                <input type="number" id="num-perguntas" name="num-perguntas" min="1" max="21" required>
+                <label for="num-participantes">Número de Participantes: (máx. 8)</label>
+                <input type="number" id="num-participantes" name="num-participantes" min="1" max="8" required>
+                <label for="tipo-perguntas">Tipo de Perguntas:</label>
+                <select id="tipo-perguntas" name="tipo-perguntas" required>
+                    <option value="">Escolha o Tipo</option>
+                    <option value="teoricas">Teóricas</option>
+                    <option value="praticas">Práticas</option>
+                    <option value="mistas">Mistas</option>
+                </select>
+                <label for="tema-perguntas">Tema das Perguntas:</label>
+                <select id="tema-perguntas" name="tema-perguntas" required>
+                    <option value="">Escolha um Tema</option>
+                    <option value="Química Geral">Química Geral</option>
+                    <option value="Cinética Química">Cinética Química</option>
+                    <option value="Equilíbrio Químico">Equilíbrio Químico</option>
+                </select>
+                <div class="perguntas-teoricas">
+                    <label for="tempo-teoricas">Tempo para Perguntas Teóricas (segundos):</label>
+                    <input type="number" id="tempo-teoricas" name="tempo-teoricas" min="10" max="120" required>
+                </div>
+                <div class="perguntas-praticas">
+                    <label for="tempo-praticas">Tempo para Perguntas Práticas (segundos):</label>
+                    <input type="number" id="tempo-praticas" name="tempo-praticas" min="10" max="120" required>
+                    <label for="queda-pontos-praticas">Ponto de Queda de Pontuação para Práticas (segundos):</label>
+                    <input type="number" id="queda-pontos-praticas" name="queda-pontos-praticas" min="10" max="30" required>
+                </div>
+                <button type="submit">Criar Sala</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="glass-popup" class="glass-popup">
+        <div class="popup-content">
+            <span class="close-glass-btn">&times;</span>
+            <h2>Escolha sua vidraça animada</h2>
+            <div class="glass-options">
+                <!-- Adicionar imagens das vidraças animadas -->
+                <img src="vidraçasperfil/vidraça1.gif" class="glass-option" alt="Vidraça 1">
+                <!-- Adicionar mais imagens conforme necessário -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        @TechTyrants™ - 2024 - Todos os Direitos Reservados.
+    </footer>
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+    <script src="JS/scriptprofile.js" defer></script>
+    <script src="JS/scripttrechomusic.js" defer></script>
+    <script src="JS/scriptpopupsala.js" defer></script>
+    <script src="JS/scriptglasspopup.js" defer></script>
+</body>
+</html>
