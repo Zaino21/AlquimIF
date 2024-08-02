@@ -25,3 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(nextSlide, 3000);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const openMenuButton = document.querySelector('.open-menu');
+    const closeMenuButton = document.querySelector('.close-menu');
+    const nav = document.querySelector('.barranav');
+
+    openMenuButton.addEventListener('click', function() {
+        nav.classList.add('open');
+    });
+
+    closeMenuButton.addEventListener('click', function() {
+        nav.classList.remove('open');
+    });
+});
