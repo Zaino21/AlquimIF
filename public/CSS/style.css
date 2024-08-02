@@ -414,3 +414,57 @@ a:hover {
         opacity: 0;
     }
 }
+
+.open-menu,
+.close-menu {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .open-menu,
+    .close-menu {
+        display: block;
+        background-color: #6200EE;
+        border: none;
+    }
+    
+    .close-menu {
+        display: none;
+    }
+
+    .itensnav {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px;
+        border: 1px solid #ccc;    }
+
+    .itensnav li {
+        margin: 10px 0;
+    }
+
+    .itensnav a {
+        color: #3700B3;
+    }
+
+    .barranav.open .itensnav {
+        display: flex;
+    }
+
+    .barranav.open .open-menu {
+        display: none;
+    }
+
+    .barranav.open .close-menu {
+        display: block;
+    }
+
+    .carousel-container {
+        display: none;
+    }
+}
