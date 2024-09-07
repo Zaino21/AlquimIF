@@ -10,9 +10,44 @@
 <body>
     <header class="cabecalho">
         <div class="logo">
-            <a href="index.html"><img src="imgs/AlquimIF - logo.png" alt="AlquimIF logo"></a>
+            <a href="./index.html"><img src="imgs/AlquimIF - logo.png" alt="AlquimIF logo"></a>
         </div>
         <nav class="barranav">
+            <button
+              aria-expanded="false"
+              aria-label="Abrir menu"
+              class="open-menu"
+            >
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 20H30"
+                  stroke="#FFFFFF"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10 12H30"
+                  stroke="#FFFFFF"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M18 28L30 28"
+                  stroke="#FFFFFF"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
             <ul class="itensnav">
                 <li><a href="#" id="jogar-btn">Jogar</a></li>
                 <li><a href="equipe.html">Equipe</a></li>
@@ -20,6 +55,44 @@
             </ul>
         </nav>
     </header>
+
+    <div class="overlay"></div>
+    
+    <div class="side-menu">
+        <button
+              aria-expanded="true"
+              aria-label="Fechar menu"
+              class="close-menu"
+            >
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M30 10L10 30M10 10L30 30"
+                  stroke="#000000"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div class="side-menu-pad">
+                <div class="text-center">
+                    <img src="imgs/AlquimIF - logo.png" alt="AlquimIF logo" width="200" height="58" class="width-65" loading="lazy">
+                </div>
+                <nav class="vertical-nav-wrap">
+                    <ul id="vertical-nav" class="vertical-nav-inner">
+                        <li class="menu-item"><a href="#" id="jogar-btn">Jogar</a></li>
+                        <li class="menu-item"><a href="equipe.html">Equipe</a></li>
+                        <li class="menu-item"><a href="seuperfil.html">Seu Perfil</a></li>
+                    </ul>
+                </nav>
+            </div>
+    </div>
     <main class="conteudo">
         <h1>Seu Perfil</h1>
         <div class="profile-container">
@@ -175,6 +248,7 @@
         <img class="modal-content" id="modalImg">
     </div>
     <script src="JS/client.js"></script>
+    <script src="JS/burguin.js"></script>
     <script src="https://cdn.socket.io/4.4.0/socket.io.min.js"></script>
     <script src="JS/scriptprofile.js" defer></script>
     <script src="JS/scripttrechomusic.js" defer></script>
